@@ -1,26 +1,46 @@
-<h1>Add Employee</h1>
 
+<div class="main" fxFlex="100" fxFlex.xs="100" style="background: #F7F7F7;"> 
+  &nbsp;
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+      <div>
+          <h3> Employee Count:{{employee.length}}</h3>
+      </div>
+      <div>
+          <button mat-raised-button class="button" (click)="addEmployee()" >Add Form</button>
+        </div>
+    </div>
+    &nbsp;
 
-<div class="container">
-    <table class="datatable">
-      <thead>
-          <tr>
-            <th>Id</th>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>Email</th>
-          </tr>
-      </thead>
-      <tbody>
-        <tr  *ngFor="let emp of employee">
-          <td>{{emp.id}}</td>
-          <td>{{emp.fname}}</td>
-          <td>{{emp.lname}}</td>
-          <td>{{emp.email}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="container">
+        <table class="datatable">
+            <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                 
+                </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let emp of employee">
+                      <td>{{emp.id}}</td>
+                      <td>{{emp.fname}}</td>
+                      <td>{{emp.lname}}</td>
+                      <td>{{emp.email}}</td>
+                      <td>
+                        <div fxLayout="row" fxLayoutAlign="space-evenly" >
+                            <mat-icon aria-label="Edit"   (click)="updateEmployee(emp.id)">edit</mat-icon>
+                      <mat-icon aria-label="Delete" (click)="deleteEmployee(emp.id)">delete</mat-icon>
+                      </div>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+  
+</div>
 
 
 

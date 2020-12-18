@@ -1,29 +1,63 @@
+<div fxLayoutAlign="center center" class="main">
+       <mat-card fxFlex="30" fxFlex.xs="80" fxFlex.sm="70" fxFlex.md="40">
+              <mat-toolbar>Employee Payroll Form</mat-toolbar>
+              &nbsp;
 
-<div class="main">
-    <div>
-            <h2>Register</h2>
-    </div>
-    <form class="formDiv" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            &nbsp;
-            <mat-form-field class="formWidth">
-                    <mat-label>FirstName</mat-label>
-                    <input matInput placeholder="Enter FirstName"  formControlName="fname">
-                    <mat-error *ngIf="registerForm.get('fname').invalid &&
-                    registerForm.get('fname').untouched ">fname invalid</mat-error>
-             </mat-form-field>
-            
-             <mat-form-field class="formWidth">
-                    <mat-label>LastName</mat-label>
-                    <input matInput placeholder="Enter LastName"  formControlName="lname">
-             </mat-form-field>
-            
-             <mat-form-field class="formWidth">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Enter Email"  formControlName="email">
-             </mat-form-field>
+              <form class="formDiv" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                     &nbsp;
+                     <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" >
+                            <mat-label fxFlex="30" style="display: flex;
+                            align-items: center;">FirstName</mat-label>
+                            <mat-form-field fxFlex="70" appearance="outline">
+                                   <input matInput placeholder="Enter FirstName" name="fname" id="fname"
+                                          formControlName="fname">
+                                   <mat-error
+                                          *ngIf="registerForm.get('fname').invalid &&
+                                                  
+                                                 (registerForm.get('fname').dirty || registerForm.get('fname').touched)">
+                                          {{getErrorForFname()}}</mat-error>
+                            </mat-form-field>
+                     </div>
 
-             <button  mat-raised-button color="primary" type="submit">Save</button>
-             <!-- [disabled]="!registerForm.valid" -->
+                     <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" >
+                                   <mat-label fxFlex="30" style="display: flex;
+                                   align-items: center;">LastName</mat-label>
+                     <mat-form-field fxFlex="70" appearance="outline">
+                            <input matInput placeholder="Enter LastName" name="lname" id="lname"
+                                   formControlName="lname">
+                            <mat-error
+                                   *ngIf="registerForm.get('lname').invalid &&
+                                                  
+                                                 (registerForm.get('lname').dirty || registerForm.get('lname').touched)">
+                                   {{getErrorForLname()}}</mat-error>
+                     </mat-form-field>
+                     </div>
 
-            </form>
+
+                     <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" >
+                                   <mat-label fxFlex="30" style="display: flex;
+                                   align-items: center;">Email</mat-label>
+                     <mat-form-field fxFlex="70" appearance="outline">
+                            <input matInput placeholder="Enter Email" name="email" id="email" formControlName="email">
+                            <mat-error
+                                   *ngIf="registerForm.get('email').invalid &&
+                                                  
+                                                 (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                                   {{getErrorForEmail()}}</mat-error>
+                     </mat-form-field>
+                     </div>
+
+                     &nbsp;
+
+                     <div fxLayout="row" fxLayoutAlign="space-around center">
+                     <div>
+                       <button mat-raised-button  class="button1" (click)="cancel()">Cancel</button> </div>
+                     <div> 
+                      <button [disabled]="!registerForm.valid" mat-raised-button class="button1"  type="submit">Save</button>
+                     &nbsp;
+                     <button mat-raised-button class="button1" (click)="resetForm()">Reset</button></div>
+                     </div>
+              </form>
+
+       </mat-card>
 </div>

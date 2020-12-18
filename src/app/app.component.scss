@@ -1,7 +1,4 @@
-div {
-    text-align: center;
-    font-size: x-large;
-}
+
 
 img {
     display: block;
@@ -15,3 +12,32 @@ img {
     font-style: italic;
     color: red; 
 }
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 3px 5px;
+  }
+  .content {
+    padding: 3px 5px;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+
+  .headercontent{
+    padding: 0% 4% 0% 4%;
+    margin: 16px;
+  }
+  .title{
+    color: #82A70C;
+    font-size: 20px;
+  }
+  .title1{
+    color:42515F;
+    font-size: 20px;
+  }

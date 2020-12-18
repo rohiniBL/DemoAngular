@@ -1,0 +1,25 @@
+<!-- <h1>Data Binding</h1>
+
+<img src={{imageSrc}} alt="" />
+
+<h1>{{title}}</h1>
+
+<img [src]="imageSrc" alt="" />
+<button  [disabled]="isDisbled"  (click)="method1($event)">click</button>
+<input type="text" [(ngModel)]="username" />
+{{username}} -->
+
+<h1>Class Binding</h1>
+
+<div [class.textClass]="hasError">Hello</div>
+<div [class]="subclasses"></div>
+<div [ngClass]="messageClasses">Helllloooo</div>
+
+<h1>Style Binding</h1>
+<div style="font-size: 14px;color:brown">Welcome</div>
+<div [style.color]="'blue'">Hello</div>
+<div [style.color]="hasError? 'red' : 'green'">fffff</div>
+<div [ngStyle]="titleStyle">Helllloooo</div>
+
+
+

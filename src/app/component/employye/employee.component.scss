@@ -3,6 +3,12 @@ table.datatable {
 	border: none;
 	background:#fff;
 }
+.er{
+	width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 table.datatable td.table_foot {
 	border: none;
 	background: #fff;
@@ -17,14 +23,27 @@ table.datatable tr.even_col {
 table.datatable td {
 	font-size:10pt;
 	padding:5px 10px;
-	text-align: left;
+	text-align: center;
 }
 table.datatable th {
-	text-align: left;
 	font-size: 8pt;
 	padding: 10px 10px 7px;   
 	text-transform: uppercase;
 	color: #fff;
 	background-color: black;
 	font-family: sans-serif;
+	text-align: center;
+}
+.main{
+	padding: 0% 4% 0% 4%;
+	display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.button{
+	background-color: #008CFF;
+    color:#F7F7F7;
+}
+.container{
+	overflow-x: auto; //x scrollbar auto
 }

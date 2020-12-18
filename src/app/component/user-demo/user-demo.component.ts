@@ -10,7 +10,7 @@ export class UserDemoComponent implements OnInit {
   myval:number=0;
   num:any;
   isvalue:boolean=true;
-  color="pink";
+  color="red";
 
   constructor() { }
 

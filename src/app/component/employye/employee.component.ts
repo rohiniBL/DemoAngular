@@ -13,29 +13,31 @@ export class EmployeeComponent implements OnInit {
 
   employee = []
   addForm: FormGroup;
+  parentMessage = "message from parent"
+  myname:any;
+  user:any[]=[
+    {
+      "id":1,"name":"Raj","salary":45000
+    },
+    {
+      "id":2,"name":"Siya","salary":3300
+    },
+    {
+      "id":3,"name":"Piya","salary":55000
+    }
+  ]
+
 
   constructor(
     private userService: UserService,
     private router: Router,
     private formBuilder: FormBuilder) { }
 
-  // data=[
-  //   {
-  //     "id":1,"name":"Raj","salary":45000
-  //   },
-  //   {
-  //     "id":2,"name":"Siya","salary":3300
-  //   },
-  //   {
-  //     "id":3,"name":"Piya","salary":55000
-  //   }
-  // ]
+
 
   ngOnInit(): void {
      this.getEmployee()
   }
-
-
 
   getEmployee() {
     this.userService.getData1()
@@ -47,6 +49,17 @@ export class EmployeeComponent implements OnInit {
           console.log(error)
         }
       )
+  }
+  addEmployee(){
+    this.router.navigateByUrl('payrollform')
+  }
+
+  updateEmployee(id){
+    this.router.navigate(['payrollform',id])
+  }
+
+  deleteEmployee(id){
+    console.log("Delete "+id)
   }
 
 
