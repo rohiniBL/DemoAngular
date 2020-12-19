@@ -10,18 +10,20 @@ import { combineLatest } from 'rxjs';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { AuthGuard } from 'src/service/auth.guard';
 import { AuthguradGuard } from 'src/service/authgurad.guard';
+import { HomeComponent } from './component/home/home.component';
 
 
 
 const routes: Routes = [
 
   {path:"demo",component:UserDemoComponent},
+  {path:"",component:HomeComponent,canActivate:[AuthguradGuard]},
   {path:"login",component:SignInComponent},
   {path:"data",component:DatabindingComponent},
   {path:"bind",component:BindingComponent},
   {path:"payrollform",component:AddEmployeeComponent,canActivate:[AuthguradGuard]},
   {path:"payrollform/:id",component:AddEmployeeComponent},
-  {path:"",component:EmployeeComponent,canActivate:[AuthguradGuard]},
+  // {path:"",component:EmployeeComponent,canActivate:[AuthguradGuard]},
   {path:"**",component:PageNotFoundComponent}
 ];
 

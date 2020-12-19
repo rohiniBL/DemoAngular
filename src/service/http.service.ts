@@ -15,4 +15,8 @@ export class HttpService {
   post(url,data,isHeaderReq = false,header){
     return this.http.post(url,data,isHeaderReq && header)
    }
+
+   delete(url,isHeaderReq = false,header){
+    return this.http.delete(url,isHeaderReq && header)
+   }
 }

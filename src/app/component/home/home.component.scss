@@ -1,0 +1,13 @@
+.main{
+	padding: 0% 4% 0% 4%;
+	display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.button{
+	background-color: #008CFF;
+    color:#F7F7F7;
+}
+.container{
+	overflow-x: auto; //x scrollbar auto
+}

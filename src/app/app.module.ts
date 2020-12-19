@@ -20,6 +20,7 @@ import { DatabindingComponent } from './component/databinding/databinding.compon
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { AuthGuard } from 'src/service/auth.guard';
 import { AuthguradGuard } from 'src/service/authgurad.guard';
+import { HomeComponent } from './component/home/home.component';
 
 
 
@@ -33,6 +34,7 @@ import { AuthguradGuard } from 'src/service/authgurad.guard';
     BindingComponent,
     DatabindingComponent,
     SignInComponent,
+    HomeComponent,
   
   ],
   imports: [

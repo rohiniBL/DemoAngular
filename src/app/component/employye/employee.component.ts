@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { UserService } from 'src/service/user.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-employee',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
 
+  @Output() messageEvent = new EventEmitter<any>();
 
   employee = []
   addForm: FormGroup;
@@ -43,6 +45,7 @@ export class EmployeeComponent implements OnInit {
     this.userService.getData1()
       .subscribe(response => {
         this.employee = response;
+        this.messageEvent.emit(response.length)
         console.log("Response" + JSON.stringify( this.employee))
       },
         error => {
@@ -60,6 +63,15 @@ export class EmployeeComponent implements OnInit {
 
   deleteEmployee(id){
     console.log("Delete "+id)
+    this.userService.delete(id)
+      .subscribe(response => {
+       console.log(response)
+       this.getEmployee()
+      },
+        error => {
+          console.log(error)
+        }
+      )
   }
 
 

@@ -48,4 +48,15 @@ post(data1):Observable<any>{
   return this.httpService.post(url,data,false,token)
 }
 
+delete(id):Observable<any>{
+  let url=this.baseURL1+"/employee/"+id;
+  let token={
+    headers: {
+      'content-type': 'application/json', 
+     // 'token':localStorage.getItem('token')
+    }}
+  return this.httpService.delete(url,false,token)
+}
+
+
 }

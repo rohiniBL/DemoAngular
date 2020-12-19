@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, OnDestroy, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, SimpleChange, Output,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/service/user.service';
 import { Employee } from 'src/app/model/Employee';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -23,10 +24,14 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     console.log("Constructor")
     this.id = this.route.snapshot.params.id;
     console.log("ID=====" + this.id)
-    this.getEmployeeData(this.id);
+    if(this.id != undefined){
+      this.getEmployeeData(this.id);
+    }
   }
 
   @Input() childMessage: string;
+
+  
 
   ngOnInit(): void {
     console.log("OnInit called")
